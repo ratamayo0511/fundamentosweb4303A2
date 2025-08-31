@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre mí</title>
+    <style>
+        body {
+            background-color: #fefefe;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #1e90ff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #ff4500;
+            margin-top: 30px;
+            border-bottom: 2px solid #ff4500;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        
+        .imagenes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .imagenes img {
+            width: 250px;  
+            border-radius: 10px;
+            border: 3px solid #1e90ff;
+            transition: transform 0.3s ease;
+        }
+
+        .imagenes img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Tabla */
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 60%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #1e90ff;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            background-color: #f0f8ff;
+            padding: 12px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #e6f2ff; 
+        }
+
+      
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #32cd32;
+            padding: 10px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #228b22;
+        }
+
+     
+        footer {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #1e90ff;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sobre mí</h1>
+    <p>Mi nombre es <b>Andrés Chacón</b>, nací el <b>30 de diciembre de 2005</b> y vivo en <b>Florida, Valle del Cauca</b>.</p>
+    <p>Me interesa el mundo de la <b>tecnología</b> y actualmente estoy aprendiendo <b>programación con Java</b>.</p>
+
+ 
+    <div class="imagenes">
+        <img src="img/andres2.jpg" alt="Foto de Andrés Chacón 2">
+        <img src="img/andres4.jpg" alt="Foto de Andrés Chacón 4">
+        <img src="img/andres5.jpg" alt="Foto de Andrés Chacón 5">
+    </div>
+
+    <h2>Datos personales</h2>
+    <table>
+        <tr>
+            <th>Año de nacimiento</th>
+            <th>Lugar de residencia</th>
+            <th>Lenguajes que conozco</th>
+        </tr>
+        <tr>
+            <td>2005</td>
+            <td>Florida, Valle del Cauca</td>
+            <td>JavaScript, Python, HTML</td>
+        </tr>
+    </table>
+
+    <p><a href="index.html">Volver a la página principal</a></p>
+
+    <footer>
+        © 2025 Andrés Chacón - AndrexDynasty
+    </footer>
+</body>
+</html>

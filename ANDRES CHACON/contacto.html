@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <style>
+        body {
+            background-color: #f0f8ff; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #1e90ff; 
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 300px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 2px solid #1e90ff;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #ff4500;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: white;
+            background-color: #32cd32; 
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #228b22;
+        }
+
+        .imagenes {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .imagenes img {
+            width: 200px; 
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Contacto</h1>
+
+   
+    <div class="imagenes">
+       <img src="img/andres6.jpg" alt="Imagen Andres 1" width="150">
+       <img src="img/andres2.jpg" alt="Imagen Andres 2" width="150">
+       <img src="img/andres3.jpg" alt="Imagen Andres 3" width="150">
+
+    </div>
+
+    <
+    <form onsubmit="return validarFormulario()">
+        <label>Nombre:
+            <input type="text" name="nombre" id="nombre" required>
+        </label>
+        <label>Email:
+            <input type="email" name="email" id="email" required>
+        </label>
+        <label>Mensaje:
+            <textarea name="mensaje" id="mensaje" rows="5" required></textarea>
+        </label>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p><a href="index.html">Volver a la página principal</a></p>
+
+    <script>
+        function validarFormulario() {
+            let nombre = document.getElementById("nombre").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mensaje = document.getElementById("mensaje").value.trim();
+
+            if (nombre === "" || email === "" || mensaje === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
