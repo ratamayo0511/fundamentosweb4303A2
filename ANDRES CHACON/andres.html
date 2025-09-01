@@ -8,14 +8,23 @@
             background-color: #f0f8ff; 
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
         }
 
         h1 {
-            color: #1e90ff; 
+            margin: 0;
         }
 
         h2 {
             color: #ff4500; 
+            margin-top: 30px;
         }
 
         p {
@@ -34,50 +43,71 @@
             margin: 5px 0;
         }
 
-        a {
+        nav a {
             text-decoration: none;
             color: white;
             background-color: #1e90ff;
             padding: 8px 12px;
             border-radius: 5px;
             margin: 5px;
+            transition: 0.3s;
         }
 
-        a:hover {
+        nav a:hover {
             background-color: #ff4500;
         }
 
         img {
-            margin-top: 20px;
+            margin: 15px;
             border: 3px solid #1e90ff;
             border-radius: 10px;
+            transition: transform 0.3s;
+            max-width: 90%;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #1e90ff;
+            color: white;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenido a mi página</h1>
-    <p>Hola, soy Andrés Chacón y este es mi primer sitio web en HTML.</p>
+    <header>
+        <h1>Bienvenido a mi página</h1>
+        <p>Hola, soy <strong>Andrés Chacón</strong> y este es mi primer sitio web en HTML.</p>
+    </header>
 
-    <h2>Mis hobbies</h2>
-    <ul>
-        <li>Ver películas y series</li>
-        <li>Jugar videojuegos</li>
-        <li>Hacer ejercicio</li>
-        <li>Escuchar música</li>
-        <li>Jugar fútbol</li>
-    </ul>
+    <section>
+        <h2>Mis hobbies</h2>
+        <ul>
+            <li>Ver películas y series</li>
+            <li>Jugar videojuegos</li>
+            <li>Hacer ejercicio</li>
+            <li>Escuchar música</li>
+            <li>Jugar fútbol</li>
+        </ul>
+    </section>
 
-    <br>
-    
-    <img src="img/andres.jpg" alt="Foto de Andrés Chacón" width="200">
-   
-    <img src="img/andres7.jpg" alt="Otra foto de Andrés" width="200">
-   
-    <img src="img/andres5.jpg" alt="Andrés en otra imagen" width="200">
+    <section>
+        <h2>Galería</h2>
+        <img src="img/andres.jpg" alt="Foto de Andrés Chacón" width="200">
+        <img src="img/andres7.jpg" alt="Otra foto de Andrés" width="200">
+        <img src="img/andres5.jpg" alt="Andrés en otra imagen" width="200">
+    </section>
 
-    <p>
+    <nav>
         <a href="sobre_mi.html">Sobre mí</a> 
         <a href="contacto.html">Contacto</a>
-    </p>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Andrés Chacón - AndrexDynasty</p>
+    </footer>
 </body>
 </html>
