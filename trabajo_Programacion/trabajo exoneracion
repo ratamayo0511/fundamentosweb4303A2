@@ -1,0 +1,115 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Producto {
+    private String nombre;
+    private String codigo;
+    private double precio;
+    private int cantidad;
+
+    public Producto(String nombre, String codigo, double precio, int cantidad) {
+        this.nombre = nombre;
+        this.codigo = codigo;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void actualizarCantidad(int nuevaCantidad) {
+        this.cantidad = nuevaCantidad;
+    }
+
+    public double valorTotal() {
+        return precio * cantidad;
+    }
+
+    public void mostrarInfo() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Código: " + codigo);
+        System.out.println("Precio: $" + precio);
+        System.out.println("Cantidad en stock: " + cantidad);
+    }
+}
+
+public class Inventario {
+    private static ArrayList<Producto> productos = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int opcion;
+        do {
+            System.out.println("\n--- Sistema de Gestión de Inventario ---");
+            System.out.println("1. Agregar producto");
+            System.out.println("2. Actualizar stock");
+            System.out.println("3. Buscar producto por código");
+            System.out.println("4. Calcular valor total del inventario");
+            System.out.println("5. Salir");
+            System.out.print("Seleccione una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine(); // Limpiar buffer
+
+            switch (opcion) {
+                case 1 -> agregarProducto();
+                case 2 -> actualizarStock();
+                case 3 -> buscarProducto();
+                case 4 -> calcularValorTotal();
+                case 5 -> System.out.println("Saliendo...");
+                default -> System.out.println("Opción inválida.");
+            }
+        } while (opcion != 5);
+    }
+
+    private static void agregarProducto() {
+        System.out.print("Nombre del producto: ");
+        String nombre = scanner.nextLine();
+        System.out.print("Código único: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Precio: ");
+        double precio = scanner.nextDouble();
+        System.out.print("Cantidad en stock: ");
+        int cantidad = scanner.nextInt();
+        scanner.nextLine(); // Limpiar buffer
+
+        productos.add(new Producto(nombre, codigo, precio, cantidad));
+        System.out.println("Producto agregado exitosamente.");
+    }
+
+    private static void actualizarStock() {
+        System.out.print("Ingrese el código del producto: ");
+        String codigo = scanner.nextLine();
+        for (Producto p : productos) {
+            if (p.getCodigo().equals(codigo)) {
+                System.out.print("Nueva cantidad: ");
+                int nuevaCantidad = scanner.nextInt();
+                scanner.nextLine(); // Limpiar buffer
+                p.actualizarCantidad(nuevaCantidad);
+                System.out.println("Cantidad actualizada.");
+                return;
+            }
+        }
+        System.out.println("Producto no encontrado.");
+    }
+
+    private static void buscarProducto() {
+        System.out.print("Ingrese el código del producto: ");
+        String codigo = scanner.nextLine();
+        for (Producto p : productos) {
+            if (p.getCodigo().equals(codigo)) {
+                p.mostrarInfo();
+                return;
+            }
+        }
+        System.out.println("Producto no encontrado.");
+    }
+
+    private static void calcularValorTotal() {
+        double total = 0;
+        for (Producto p : productos) {
+            total += p.valorTotal();
+        }
+        System.out.println("Valor total del inventario: $" + total);
+    }
+}
